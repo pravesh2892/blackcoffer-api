@@ -1,7 +1,7 @@
 const express = require("express");
 const serverless = require("serverless-http");
 const { connection } = require("./connection");
-const { DataModel } = require("../model/data.model");
+const { DataModel } = require("../../model/data.model");
 
 const app = express();
 const dataRouter = express.Router();
