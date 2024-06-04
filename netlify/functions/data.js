@@ -18,6 +18,6 @@ dataRouter.get("/", async (req, res) => {
   }
 });
 
-app.use("/data", dataRouter);
+app.use("/.netlify/functions/data", dataRouter);
 
 module.exports.handler = serverless(app);
