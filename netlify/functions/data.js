@@ -1,6 +1,6 @@
 const express = require("express");
 const serverless = require("serverless-http");
-const { connection } = require("./connection");
+const { connectDB } = require("./connection");
 const { DataModel } = require("../../model/data.model");
 
 const app = express();
@@ -10,7 +10,7 @@ app.use(express.json());
 
 dataRouter.get("/", async (req, res) => {
   try {
-    await connection;
+    await connectDB();
     let data = await DataModel.find();
     res.send(data);
   } catch (error) {
